@@ -1,0 +1,68 @@
+server:
+  port: 8383
+eureka:
+  instance:
+    hostname: dbserver
+    prefer-ip-address: true
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    service-url:
+      defaultZone: http://aa:abcd@localhost:8761/eureka/
+
+druid:
+  datasource:
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/kakme?useUnicode=true&characterEncoding=UTF-8&useSSL=false
+    username: root
+    password: 123456
+    #初始化连接数量，最大最小连接数
+    initialSize: 5
+    maxActive: 10
+    minIdle: 3
+    #获取连接等待超时的时间
+    maxWait: 600000
+    #超过时间限制是否回收
+    removeAbandoned: true
+    #超过时间限制多长
+    removeAbandonedTimeout: 180
+    #配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒
+    timeBetweenEvictionRunsMillis: 600000
+    #配置一个连接在池中最小生存的时间，单位是毫秒
+    minEvictableIdleTimeMillis: 300000
+    #用来检测连接是否有效的sql，要求是一个查询语句
+    validationQuery: SELECT 1 FROM DUAL
+    #申请连接的时候检测
+    testWhileIdle: true
+    #申请连接时执行validationQuery检测连接是否有效，配置为true会降低性能
+    testOnBorrow: false
+    #归还连接时执行validationQuery检测连接是否有效，配置为true会降低性能
+    testOnReturn: false
+    #打开PSCache，并且指定每个连接上PSCache的大小
+    poolPreparedStatements: true
+    maxPoolPreparedStatementPerConnectionSize: 50
+    #属性类型是字符串，通过别名的方式配置扩展插件，常用的插件有：
+    #监控统计用的filter:stat 日志用的filter:log4j 防御SQL注入的filter:wall
+    filters: stat
+
+spring:
+  thymeleaf:
+    cache: false
+    mode: LEGACYHTML5
+    prefix: classpath:/web/
+    suffix: .html
+    content-type: text/html
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    password: 111222333444555666
+    timeout: 5000
+    pool:
+      max-idle: 8
+      min-idle: 0
+      max-active: 8
+      max-wait: -1
+mybatis:
+  typeAliasesPackage: com.bootcwenao.dbserver.pojo,com.bootcwenao.dbserver.vo
+  mapper-locations: classpath:/com/bootcwenao/dbserver/mapper/*Mapper.xml
+  configLocation: classpath:/config/mybatis-spring.xml

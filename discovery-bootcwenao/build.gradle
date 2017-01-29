@@ -1,0 +1,28 @@
+apply plugin: 'org.springframework.boot'
+
+dependencyManagement {
+    imports {
+        mavenBom "org.springframework.cloud:spring-cloud-dependencies:"+ springCloudVersion
+        //mavenBom "org.springframework.boot:spring-boot-starter:"+ springBootVersion
+    }
+}
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+
+    compile ('org.springframework.cloud:spring-cloud-starter-eureka-server')
+    compile ('org.springframework.cloud:spring-cloud-config-server')
+    compile ('org.springframework.boot:spring-boot-starter-web:'+springBootVersion)
+    compile ('org.springframework.boot:spring-boot-starter-redis:'+springBootVersion)
+    compile ('org.springframework.boot:spring-boot-starter-security:'+springBootVersion)
+
+}
+
+jar {
+    baseName = 'discovery-bootcwenao'
+}

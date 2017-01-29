@@ -1,0 +1,70 @@
+buildscript {
+	ext {
+		springBootVersion = '1.4.3.RELEASE'
+	}
+	repositories {
+		mavenCentral()
+
+		maven { url "http://maven.aliyun.com/nexus/content/repositories/snapshots"}
+	}
+
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+	}
+}
+
+allprojects {
+	apply plugin: 'idea'
+	group = 'com.bootcwenao'
+	version = '0.1.0-SNAPSHOT'
+}
+
+subprojects {
+	ext {
+		springCloudVersion = 'Camden.SR3' //'Brixton.RELEASE'
+		mybatisSpringBootVersion='1.2.0'
+		mybatisVersion = '3.2.8'
+		mysqlVersion = '5.1.38'
+		okhttpVersion = '3.4.1'
+		druidVersion = '1.0.18'
+		commonsLang3Version = '3.4'
+		snappyVersion = '1.1.2.1'
+		log4jAPIVersion = '2.5'
+		nekoHtmlVersion = '1.9.22'
+        httpclientVersion = '4.5.2'
+		feignHttpclientVersion ='8.17.0'
+		swagger2Version = '2.2.2'
+		springIntegrationKafkaVersion = '2.0.1.RELEASE'
+		springKafkaCoreVersion ='4.3.6.RELEASE'
+		springKafkaVersion = '1.1.0.RELEASE'
+		fastjsonVersion = '1.2.16'
+	}
+
+	apply plugin: 'java'
+
+
+	sourceCompatibility = 1.8
+	targetCompatibility = 1.8
+
+	repositories {
+		mavenLocal()
+
+		maven { url "http://maven.aliyun.com/nexus/content/repositories/snapshots"}
+		mavenCentral()
+	}
+
+	sourceSets {
+		main {
+			java.srcDir('src/main/java')
+			resources.srcDir('src/main/resources')
+		}
+		test {
+			java.srcDir('src/test/java')
+			resources.srcDir('src/test/resources')
+		}
+	}
+
+	task wrapper(type: Wrapper) {
+		gradleVersion = '3.3'
+	}
+}

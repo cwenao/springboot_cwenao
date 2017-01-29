@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "mybatis-3-mapper.dtd" >
+<mapper namespace="com.bootcwenao.dbserver.mapper.AccountInfoMapper" >
+  <resultMap id="BaseResultMap" type="com.bootcwenao.dbserver.pojo.AccountInfo" >
+    <id column="id" property="id" jdbcType="VARCHAR" />
+    <result column="account_name" property="accountName" jdbcType="VARCHAR" />
+    <result column="nick_name" property="nickName" jdbcType="VARCHAR" />
+    <result column="mail" property="mail" jdbcType="VARCHAR" />
+    <result column="m_tel" property="mTel" jdbcType="VARCHAR" />
+    <result column="land_tel" property="landTel" jdbcType="VARCHAR" />
+    <result column="is_vip" property="isVip" jdbcType="INTEGER" />
+    <result column="password" property="password" jdbcType="VARCHAR" />
+    <result column="salt" property="salt" jdbcType="VARCHAR" />
+    <result column="head_image" property="headImage" jdbcType="VARCHAR" />
+    <result column="back_image" property="backImage" jdbcType="VARCHAR" />
+    <result column="account_type" property="accountType" jdbcType="INTEGER" />
+    <result column="source" property="source" jdbcType="INTEGER" />
+    <result column="audit_status" property="auditStatus" jdbcType="INTEGER" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
+    <result column="status" property="status" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, account_name, nick_name, mail, m_tel, land_tel, is_vip, `password`, salt, head_image,
+    back_image, account_type, `source`, audit_status, create_time, update_time, `status`
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select
+    <include refid="Base_Column_List" />
+    from account_info
+    where id = #{id,jdbcType=VARCHAR}
+  </select>
+
+  <select id="selectByName" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select
+    <include refid="Base_Column_List" />
+    from account_info
+    where account_name = #{accountName,jdbcType=VARCHAR}
+  </select>
+
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from account_info
+    where id = #{id,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.bootcwenao.dbserver.pojo.AccountInfo" >
+    insert into account_info (id, account_name, nick_name,
+    mail, m_tel, land_tel,
+    is_vip, `password`, salt,
+    head_image, back_image, account_type,
+    `source`, audit_status, create_time,
+    update_time, `status`)
+    values (#{id,jdbcType=VARCHAR}, #{accountName,jdbcType=VARCHAR}, #{nickName,jdbcType=VARCHAR},
+    #{mail,jdbcType=VARCHAR}, #{mTel,jdbcType=VARCHAR}, #{landTel,jdbcType=VARCHAR},
+    #{isVip,jdbcType=INTEGER}, #{password,jdbcType=VARCHAR}, #{salt,jdbcType=VARCHAR},
+    #{headImage,jdbcType=VARCHAR}, #{backImage,jdbcType=VARCHAR}, #{accountType,jdbcType=INTEGER},
+    #{source,jdbcType=INTEGER}, #{auditStatus,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP},
+    #{updateTime,jdbcType=TIMESTAMP}, #{status,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.bootcwenao.dbserver.pojo.AccountInfo" >
+    insert into account_info
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      id,
+      account_name,
+      nick_name,
+      mail,
+      m_tel,
+      land_tel,
+      is_vip,
+      `password`,
+      salt,
+      head_image,
+      back_image,
+      account_type,
+      `source`,
+      audit_status,
+      create_time,
+      update_time,
+      `status`,
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      #{id,jdbcType=VARCHAR},
+      #{accountName,jdbcType=VARCHAR},
+      #{nickName,jdbcType=VARCHAR},
+      #{mail,jdbcType=VARCHAR},
+      #{mTel,jdbcType=VARCHAR},
+      #{landTel,jdbcType=VARCHAR},
+      #{isVip,jdbcType=INTEGER},
+      #{password,jdbcType=VARCHAR},
+      #{salt,jdbcType=VARCHAR},
+      #{headImage,jdbcType=VARCHAR},
+      #{backImage,jdbcType=VARCHAR},
+      #{accountType,jdbcType=INTEGER},
+      #{source,jdbcType=INTEGER},
+      #{auditStatus,jdbcType=INTEGER},
+      #{createTime,jdbcType=TIMESTAMP},
+      #{updateTime,jdbcType=TIMESTAMP},
+      #{status,jdbcType=INTEGER},
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.bootcwenao.dbserver.pojo.AccountInfo" >
+    update account_info
+    <set >
+      <if test="accountName != null" >
+        account_name = #{accountName,jdbcType=VARCHAR},
+      </if>
+      <if test="nickName != null" >
+        nick_name = #{nickName,jdbcType=VARCHAR},
+      </if>
+      <if test="mail != null" >
+        mail = #{mail,jdbcType=VARCHAR},
+      </if>
+      <if test="mTel != null" >
+        m_tel = #{mTel,jdbcType=VARCHAR},
+      </if>
+      <if test="landTel != null" >
+        land_tel = #{landTel,jdbcType=VARCHAR},
+      </if>
+      <if test="isVip != null" >
+        is_vip = #{isVip,jdbcType=INTEGER},
+      </if>
+      <if test="password != null" >
+        `password` = #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="salt != null" >
+        salt = #{salt,jdbcType=VARCHAR},
+      </if>
+      <if test="headImage != null" >
+        head_image = #{headImage,jdbcType=VARCHAR},
+      </if>
+      <if test="backImage != null" >
+        back_image = #{backImage,jdbcType=VARCHAR},
+      </if>
+      <if test="accountType != null" >
+        account_type = #{accountType,jdbcType=INTEGER},
+      </if>
+      <if test="source != null" >
+        `source` = #{source,jdbcType=INTEGER},
+      </if>
+      <if test="auditStatus != null" >
+        audit_status = #{auditStatus,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null" >
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="status != null" >
+        `status` = #{status,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.bootcwenao.dbserver.pojo.AccountInfo" >
+    update account_info
+    set account_name = #{accountName,jdbcType=VARCHAR},
+    nick_name = #{nickName,jdbcType=VARCHAR},
+    mail = #{mail,jdbcType=VARCHAR},
+    m_tel = #{mTel,jdbcType=VARCHAR},
+    land_tel = #{landTel,jdbcType=VARCHAR},
+    is_vip = #{isVip,jdbcType=INTEGER},
+    `password` = #{password,jdbcType=VARCHAR},
+    salt = #{salt,jdbcType=VARCHAR},
+    head_image = #{headImage,jdbcType=VARCHAR},
+    back_image = #{backImage,jdbcType=VARCHAR},
+    account_type = #{accountType,jdbcType=INTEGER},
+    `source` = #{source,jdbcType=INTEGER},
+    audit_status = #{auditStatus,jdbcType=INTEGER},
+    create_time = #{createTime,jdbcType=TIMESTAMP},
+    update_time = #{updateTime,jdbcType=TIMESTAMP},
+    `status` = #{status,jdbcType=INTEGER}
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+</mapper>

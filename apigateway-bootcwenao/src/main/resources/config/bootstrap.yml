@@ -1,0 +1,29 @@
+server:
+  port: 10002
+sidecar:
+  port: 20001
+
+#configServer
+spring:
+  application:
+    name: apigateway
+  profiles:
+    active: dev
+  cloud:
+    config:
+      uri: http://localhost:8888/
+    discovery:
+      enabled: true
+    stream:
+      kafka:
+        binder:
+          brokers: 127.0.0.1:9092
+          zk-nodes: 127.0.0.1:2181
+zuul:
+  routes:
+    servers:
+      path: /servers/**
+      serviceId: FEIGNSERVER
+    dbserver:
+      path: /dbserver/**
+      serviceId: DBSERVER

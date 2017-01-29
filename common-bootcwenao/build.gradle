@@ -1,0 +1,33 @@
+
+dependencies {
+    compile('org.springframework.boot:spring-boot-starter-log4j2:'+springBootVersion)
+    
+
+    compile('org.mybatis.spring.boot:mybatis-spring-boot-starter:'+mybatisSpringBootVersion)
+    compile('com.alibaba:druid:'+ druidVersion)
+    compile('org.mybatis:mybatis:'+ mybatisVersion)
+
+    //apache
+    compile('org.apache.commons:commons-lang3:'+commonsLang3Version)
+
+
+    runtime('mysql:mysql-connector-java:' + mysqlVersion)
+
+    testCompile('org.springframework.boot:spring-boot-starter-test:'+springBootVersion)
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+}
+
+configurations {
+    all*.exclude module: 'spring-boot-starter-logging'
+}
+
+sourceSets {
+    main {
+        resources.srcDirs = ['src/main/resources', 'src/main/java']
+        resources.includes = ['**/*.xml', '**/*.yml']
+    }
+}
+jar {
+    baseName = 'common-bootcwenao'
+}
+

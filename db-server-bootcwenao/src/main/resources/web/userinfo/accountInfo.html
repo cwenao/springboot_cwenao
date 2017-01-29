@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body >
+    <table>
+        <tr th:each="accountInfo:${accountList}">
+
+            <td th:text="${accountInfo.accountName}">aabbcc</td>
+            <td th:text="${accountInfo.salt}">123dds</td>
+        </tr>
+    </table>
+</body>
+</html>

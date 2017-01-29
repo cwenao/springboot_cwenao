@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: dbserver
+logging:
+  config: classpath:log4j2-spring.xml

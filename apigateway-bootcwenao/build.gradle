@@ -1,0 +1,49 @@
+apply plugin: 'org.springframework.boot'
+
+dependencyManagement {
+    imports {
+        mavenBom "org.springframework.cloud:spring-cloud-dependencies:"+ springCloudVersion
+        mavenBom "org.springframework.boot:spring-boot-dependencies:"+ springBootVersion
+        mavenBom "org.springframework.boot:spring-boot-starter:"+ springBootVersion
+    }
+}
+
+dependencies {
+    compile('org.springframework.cloud:spring-cloud-starter-config')
+    compile('org.springframework.cloud:spring-cloud-starter-eureka')
+    compile('org.springframework.cloud:spring-cloud-starter-zuul')
+    compile('org.springframework.cloud:spring-cloud-netflix-sidecar')
+    compile('org.springframework.cloud:spring-cloud-starter-bus-kafka')
+
+    compile('org.springframework.cloud:spring-cloud-stream')
+
+    compile('org.xerial.snappy:snappy-java:' + snappyVersion)
+    compile ('org.springframework.boot:spring-boot-starter-web')
+    compile('org.springframework.boot:spring-boot-starter-log4j2')
+
+    compile('org.apache.logging.log4j:log4j-1.2-api:'+ log4jAPIVersion)
+
+
+    testCompile('org.springframework.boot:spring-boot-starter-test')
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+
+}
+
+configurations {
+    all*.exclude module: 'spring-boot-starter-logging'
+    all*.exclude module: 'logback-classic'
+    all*.exclude module: 'log4j-over-slf4j'
+    all*.exclude module: 'snappy-java'
+}
+
+sourceSets {
+    main {
+        resources.srcDirs = ['src/main/resources', 'src/main/java']
+        resources.includes = ['**/*.xml', '**/*.yml']
+    }
+}
+
+
+jar {
+    baseName = 'apigateway-bootcwenao'
+}
