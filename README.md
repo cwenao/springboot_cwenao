@@ -28,3 +28,4 @@ Spring Boot系列：http://blog.csdn.net/cwenao/article/category/6671131
 #### [十一、Kafka(二) Demo](http://blog.csdn.net/cwenao/article/details/54668590)
 #### [十二、集成Mybatis/Druid](http://blog.csdn.net/cwenao/article/details/54772939)
 #### [十三、集成Redis/CacheManager](http://blog.csdn.net/cwenao/article/details/54773508)
+#### [十四、集成Mongodb](http://blog.csdn.net/cwenao/article/details/54783050)
