@@ -6,7 +6,9 @@ package com.bootcwenao.dbserver.controller;
 
 import com.bootcwenao.dbserver.handler.validator.AbstractCacheSupport;
 import com.bootcwenao.dbserver.pojo.AccountInfo;
+import com.bootcwenao.dbserver.pojo.MessageInfo;
 import com.bootcwenao.dbserver.server.AccountInfoServer;
+import com.bootcwenao.dbserver.server.MsgInfoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.Cache;
 import org.springframework.cache.CacheManager;
@@ -30,6 +32,10 @@ public class UserInfoController extends AbstractCacheSupport {
     @Autowired
     CacheManager cacheManager;
 
+    @Autowired
+    MsgInfoRepository msgInfoRepository;
+
+
     private final static String TEST_REDIS = "test_redis";
 
     @RequestMapping("/accountInfo")
@@ -39,6 +45,20 @@ public class UserInfoController extends AbstractCacheSupport {
         List<AccountInfo> accountInfoList = accountInfoServerImpl.selectByName(name);
         modelMap.addAttribute("accountList", accountInfoList);
         System.out.println(getFromCache(cache,"test_aa"));
+        return "userinfo/accountInfo";
+
+    }
+    @RequestMapping("/messageInfo")
+    public String messageInfo(String title, ModelMap modelMap) {
+
+        MessageInfo messageInfo = new MessageInfo();
+        messageInfo.setMsgInfo("hello world !");
+        messageInfo.setTitle(title);
+        messageInfo.setMsgType("1");
+
+        msgInfoRepository.save(messageInfo);
+        modelMap.addAttribute("test_mongodb", msgInfoRepository.queryMsgInfoByTitle("cwenao").toString());
+
         return "userinfo/accountInfo";
 
     }

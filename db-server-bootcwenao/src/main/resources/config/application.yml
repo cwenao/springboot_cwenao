@@ -62,6 +62,15 @@ spring:
       min-idle: 0
       max-active: 8
       max-wait: -1
+  data:
+    mongodb:
+#   host: 127.0.0.1
+#   port: 27017
+#   username: dev_xxx
+#   password: dev_xxxx
+#   database: kakme
+    uri: mongodb://dev_xxx:dev_xxxx@127.0.0.1:27017/kakme
+
 mybatis:
   typeAliasesPackage: com.bootcwenao.dbserver.pojo,com.bootcwenao.dbserver.vo
   mapper-locations: classpath:/com/bootcwenao/dbserver/mapper/*Mapper.xml

@@ -27,3 +27,9 @@ zuul:
     dbserver:
       path: /dbserver/**
       serviceId: DBSERVER
+  max:
+    host:
+      connections: 200
+  host:
+    socket-timeout-millis: 60000
+    connect-timeout-millis: 60000
