@@ -1,0 +1,50 @@
+apply plugin: 'org.springframework.boot'
+
+dependencyManagement{
+    imports {
+        mavenBom "org.springframework.cloud:spring-cloud-dependencies:" + springCloudVersion
+        mavenBom "org.springframework.boot:spring-boot-starter:"+ springBootVersion
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+
+    compile ('org.springframework.data:spring-data-redis')
+    compile ('org.springframework.boot:spring-boot-starter-data-mongodb:'+springBootVersion)
+    compile ('org.springframework.boot:spring-boot-starter-web:'+springBootVersion)
+    compile('org.springframework.cloud:spring-cloud-starter-eureka')
+    compile ('mysql:mysql-connector-java:'+mysqlVersion)
+    compile ('com.alibaba:druid:'+druidVersion)
+    compile ('org.mybatis:mybatis-spring:'+mybatisSpringBootVersion)
+    compile ('org.mybatis:mybatis:'+mybatisVersion)
+    compile('org.springframework.boot:spring-boot-starter-log4j2')
+    compile ('org.springframework.boot:spring-boot-starter-thymeleaf')
+    compile ('net.sourceforge.nekohtml:nekohtml:'+nekoHtmlVersion)
+    compile('org.apache.logging.log4j:log4j-1.2-api:'+ log4jAPIVersion)
+    compile('org.springframework.boot:spring-boot-starter-jdbc')
+    compile('org.springframework.boot:spring-boot-starter-aop')
+    compile ('com.alibaba:fastjson:'+fastjsonVersion)
+    compile ('redis.clients:jedis')
+    compile ('org.springframework.boot:spring-boot-starter-data-elasticsearch:'+springBootVersion)
+    compile ('org.springframework.data:spring-data-elasticsearch')
+
+    testCompile ('org.springframework.boot:spring-boot-starter-test')
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+}
+
+
+
+configurations {
+    all*.exclude module: 'spring-boot-starter-logging'
+    all*.exclude module: 'logback-classic'
+    all*.exclude module: 'log4j-over-slf4j'
+    all*.exclude module: 'snappy-java'
+}
+
+jar {
+    baseName = 'es-server-bootcwenao'
+}

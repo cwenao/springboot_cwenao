@@ -27,6 +27,9 @@ zuul:
     dbserver:
       path: /dbserver/**
       serviceId: DBSERVER
+    esserver:
+          path: /esserver/**
+          serviceId: ESSERVER
   max:
     host:
       connections: 200

@@ -1,0 +1,7 @@
+server:
+  port: 8586
+spring:
+  application:
+    name: esserver
+logging:
+  config: classpath:log4j2-spring.xml
