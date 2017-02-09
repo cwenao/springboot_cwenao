@@ -29,3 +29,5 @@ Spring Boot系列：http://blog.csdn.net/cwenao/article/category/6671131
 #### [十二、集成Mybatis/Druid](http://blog.csdn.net/cwenao/article/details/54772939)
 #### [十三、集成Redis/CacheManager](http://blog.csdn.net/cwenao/article/details/54773508)
 #### [十四、集成Mongodb](http://blog.csdn.net/cwenao/article/details/54783050)
+#### [十五、集成Elasticsearch](http://blog.csdn.net/cwenao/article/details/54943505)
+#### [十六、Elasticsearch从mysql获取数据](http://blog.csdn.net/cwenao/article/details/54944937)
