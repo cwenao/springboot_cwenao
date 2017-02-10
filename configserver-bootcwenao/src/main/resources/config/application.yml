@@ -8,7 +8,8 @@ endpoints:
     enabled: true
   health:
     sensitive: false
-
+encrypt:
+    cwenao
 spring:
   cloud:
     config:
