@@ -11,9 +11,10 @@ spring:
     active: dev
   cloud:
     config:
-      uri: http://localhost:8888/
-    discovery:
-      enabled: true
+      #uri: http://localhost:8888/
+      discovery:
+        enabled: true
+        serviceId: CONFIGSERVER
     stream:
       kafka:
         binder:
@@ -30,6 +31,9 @@ zuul:
     esserver:
           path: /esserver/**
           serviceId: ESSERVER
+    configserver:
+          path: /configserver/**
+          serviceId: CONFIGSERVER
   max:
     host:
       connections: 200
