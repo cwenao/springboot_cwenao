@@ -65,7 +65,7 @@ public class DataConfig {
     @Bean
     public MapperScannerConfigurer mapperScannerConfigurer() {
         MapperScannerConfigurer bean = new MapperScannerConfigurer();
-        bean.setBasePackage("com.bicaijia.payment.common.mapper");
+        bean.setBasePackage("com.bootcwenao.esserver.mapper");
         return bean;
     }
 
