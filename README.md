@@ -9,11 +9,6 @@ Spring Boot系列：http://blog.csdn.net/cwenao/article/category/6671131
 
 简书： http://www.jianshu.com/u/cec2e8665f7b
 
-感谢您的**Start**，谢谢给予支持！！
-如果您有任何问题，请联系我；关注公众号（K171），并留言；
-
-![公众号_k171](http://img.blog.csdn.net/20170129200618887?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvY3dlbmFv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
-
 ##**SpringBoot 实践目录**
 
 #### [一、工程搭建](http://blog.csdn.net/cwenao/article/details/54293391)
@@ -34,3 +29,9 @@ Spring Boot系列：http://blog.csdn.net/cwenao/article/category/6671131
 #### [十五、集成Elasticsearch](http://blog.csdn.net/cwenao/article/details/54943505)
 #### [十六、Elasticsearch从mysql获取数据](http://blog.csdn.net/cwenao/article/details/54944937)
 #### [十七、基于SpringDataHadoop集成HBASE](http://blog.csdn.net/cwenao/article/details/57980188)
+
+
+感谢您的**Start**，谢谢给予支持！！
+如果您有任何问题，请联系我；关注公众号（K171），并留言；
+
+![公众号_k171](http://img.blog.csdn.net/20170129200618887?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvY3dlbmFv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
