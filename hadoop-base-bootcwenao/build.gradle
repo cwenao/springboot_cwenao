@@ -1,0 +1,28 @@
+apply plugin: 'org.springframework.boot'
+
+dependencyManagement {
+    imports {
+        mavenBom "org.springframework.cloud:spring-cloud-dependencies:" + springCloudVersion
+        mavenBom "org.springframework.boot:spring-boot-starter:"+ springBootVersion
+    }
+}
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile ('org.springframework.data:spring-data-hadoop:'+ springDataHadoopVersion)
+    compile ('org.apache.hadoop:hadoop-common:'+hadoopVersion)
+}
+
+configurations {
+    all*.exclude module: 'spring-boot-starter-logging'
+    all*.exclude module: 'logback-classic'
+    all*.exclude module: 'log4j-over-slf4j'
+    all*.exclude module: 'slf4j-log4j12'
+    all*.exclude module: 'snappy-java'
+}
+
+jar {
+    baseName = 'hadoop-base-bootcwenao'
+}

@@ -29,11 +29,14 @@ zuul:
       path: /dbserver/**
       serviceId: DBSERVER
     esserver:
-          path: /esserver/**
-          serviceId: ESSERVER
+      path: /esserver/**
+      serviceId: ESSERVER
     configserver:
-          path: /configserver/**
-          serviceId: CONFIGSERVER
+      path: /configserver/**
+      serviceId: CONFIGSERVER
+    bigdataserver:
+      path: /bigdataserver/**
+      serviceId: BIGDATASERVER
   max:
     host:
       connections: 200

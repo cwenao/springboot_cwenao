@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: bigdataserver
+  aop:
+    auto: true
+  cloud:
+    stream:
+      kafka:
+        binder:
+          brokers: 127.0.0.1:9092
+          zk-nodes: 127.0.0.1:2181
+logging:
+  config: classpath:log4j2-spring.xml
