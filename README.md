@@ -7,6 +7,8 @@ GitHub：https://github.com/cwenao/springboot_cwenao
 
 Spring Boot系列：http://blog.csdn.net/cwenao/article/category/6671131
 
+简书： http://www.jianshu.com/u/cec2e8665f7b
+
 感谢您的**Start**，谢谢给予支持！！
 如果您有任何问题，请联系我；关注公众号（K171），并留言；
 
@@ -31,3 +33,4 @@ Spring Boot系列：http://blog.csdn.net/cwenao/article/category/6671131
 #### [十四、集成Mongodb](http://blog.csdn.net/cwenao/article/details/54783050)
 #### [十五、集成Elasticsearch](http://blog.csdn.net/cwenao/article/details/54943505)
 #### [十六、Elasticsearch从mysql获取数据](http://blog.csdn.net/cwenao/article/details/54944937)
+#### [十七、基于SpringDataHadoop集成HBASE](http://blog.csdn.net/cwenao/article/details/57980188)
