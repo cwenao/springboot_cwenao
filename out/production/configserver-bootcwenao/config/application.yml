@@ -1,0 +1,35 @@
+server:
+  port: 8881
+
+endpoints:
+  restart:
+    enabled: true
+  shutdown:
+    enabled: true
+  health:
+    sensitive: false
+encrypt:
+    cwenao
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/cwenao/kakmeconfig/
+          search-paths: config
+          default-label: master
+    stream:
+      kafka:
+        binder:
+          brokers: 127.0.0.1:9092
+          zk-nodes: 127.0.0.1:2181
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    password: 111222333444555666
+    timeout: 5000
+    pool:
+      max-idle: 8
+      min-idle: 0
+      max-active: 8
+      max-wait: -1

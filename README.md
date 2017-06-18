@@ -31,7 +31,10 @@ Spring Boot系列：http://blog.csdn.net/cwenao/article/category/6671131
 #### [十七、基于SpringDataHadoop集成HBASE](http://blog.csdn.net/cwenao/article/details/57980188)
 
 
-感谢您的**Start**，谢谢给予支持！！
-如果您有任何问题，请联系我；关注公众号（K171），并留言；
+> 感谢您的**Start**，谢谢给予支持！！
+> 如果您有任何问题，请联系我；关注公众号（K171），并留言；
+> 联系方式：
+>> cwenao@126.com（主要联系方式）、K171
+>> CSND、简书留言板（随缘）
 
-![公众号_k171](http://img.blog.csdn.net/20170129200618887?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvY3dlbmFv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
+![公众号_k171](http://orqbvwuj9.bkt.clouddn.com/k171_q.jpg?imageView2/3/w/240/h/240)

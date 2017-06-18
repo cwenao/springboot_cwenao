@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: discovery
+security:
+  basic:
+    enabled: true
+  user:
+   name: aa
+   password: abcd

@@ -1,0 +1,22 @@
+info:
+  component: Hystrix Dashboard
+
+server:
+  port: 4500
+
+endpoints:
+  restart:
+    enabled: true
+  shutdown:
+    enabled: true
+  health:
+    sensitive: false
+
+eureka:
+  instance:
+    hostname: hystrix-dashboard
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://aa:abcd@localhost:8761/eureka/

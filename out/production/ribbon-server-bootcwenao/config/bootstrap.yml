@@ -1,0 +1,8 @@
+server:
+  port: 8083
+
+spring:
+  application:
+    name: ribbonserver
+logging:
+  config: classpath:log4j2-spring.xml

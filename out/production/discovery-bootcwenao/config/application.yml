@@ -1,0 +1,27 @@
+server:
+  port: 8761
+eureka:
+  instance:
+    hostname: discovery
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    service-url:
+      defaultZone: http://discovery:${server.port}/eureka/
+
+#spring
+spring:
+  cloud:
+    config:
+      discovery:
+        enabled: true
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    password: 111222333444555666
+    timeout: 5000
+    pool:
+      max-idle: 8
+      min-idle: 0
+      max-active: 8
+      max-wait: -1
