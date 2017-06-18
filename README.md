@@ -34,7 +34,7 @@ Spring Boot系列：http://blog.csdn.net/cwenao/article/category/6671131
 - 感谢您的**Start**，谢谢给予支持！！
 - 如果您有任何问题，请联系我；关注公众号（K171），并留言；
 - 联系方式：
-  1. cwenao@126.com（主要联系方式）、K171 
-  2. CSDN、简书留言板（随缘）
+  1. cwenao@126.com（主要联系方式）、K171
+  2. CSDN、简书留言板（随缘）
 
 ![公众号_k171](http://orqbvwuj9.bkt.clouddn.com/k171_q.jpg)
